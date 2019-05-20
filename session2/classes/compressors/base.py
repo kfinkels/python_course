@@ -1,7 +1,11 @@
-class CompressorBase:
+from abc import ABC, abstractmethod
+
+
+class CompressorBase(ABC):
     def __init__(self, path):
         self.path = path
 
+    @abstractmethod
     def compress(self):
         pass
 
