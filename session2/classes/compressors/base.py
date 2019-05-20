@@ -4,3 +4,7 @@ class CompressorBase:
 
     def compress(self):
         pass
+
+    def __repr__(self):
+        print(f"path: {self.path}")
+

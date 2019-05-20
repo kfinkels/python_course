@@ -2,6 +2,8 @@ from session2.classes.compressors.gzip_compressor import GzipCompressor
 from session2.classes.compressors.rar_compressor import RarCompressor
 from session2.classes.compressors.zip_compressor import ZipCompressor
 from session2.classes.enums import CompressionType, TransferType
+from session2.classes.transfer_adapters.ftp_adapter import FTPAdapter
+from session2.classes.transfer_adapters.s3_adapter import S3Adapter
 
 
 def supply(address, compression_type, transfer_type, transfer_params):
@@ -27,13 +29,9 @@ def compress_file(path, type):
 
 def transfer_file(path, type, transfer_params):
     if type == TransferType.FTP:
-        print(f"Transferring {path} via FTP to {transfer_params['server']}:{transfer_params['port']}")
-    if type == TransferType.SFTP:
-        print(f"Transferring {path} via SFTP to {transfer_params['server']}:{transfer_params['port']}")
+        FTPAdapter(path, **transfer_params).transfer()
     if type == TransferType.S3:
-        print(f"Transferring {path} via S3 to {transfer_params['address']}:{transfer_params['account_id']}")
-    if type == TransferType.HTTP:
-        print(f"Transferring {path} via HTTP to {transfer_params['address']}")
+        S3Adapter(path, **transfer_params).transfer()
 
 
 if __name__ == '__main__':
