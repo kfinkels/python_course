@@ -1,3 +1,6 @@
+from session2.classes.compressors.gzip_compressor import GzipCompressor
+from session2.classes.compressors.rar_compressor import RarCompressor
+from session2.classes.compressors.zip_compressor import ZipCompressor
 from session2.classes.enums import CompressionType, TransferType
 
 
@@ -15,14 +18,11 @@ def download_file(address):
 
 def compress_file(path, type):
     if type == CompressionType.ZIP:
-        print(f"Compressing {path} to ZIP")
-        return f"{path}.zip"
+        return ZipCompressor(path).compress()
     elif type == CompressionType.GZIP:
-        print(f"Compressing {path} to GZIP")
-        return f"{path}.gzip"
+        return GzipCompressor(path).compress()
     elif type == CompressionType.RAR:
-        print(f"Compressing {path} to RAR")
-        return f"{path}.rar"
+        return RarCompressor(path).compress()
 
 
 def transfer_file(path, type, transfer_params):
