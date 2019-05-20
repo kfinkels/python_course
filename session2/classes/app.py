@@ -6,41 +6,47 @@ from session2.classes.transfer_adapters.ftp_adapter import FTPAdapter
 from session2.classes.transfer_adapters.s3_adapter import S3Adapter
 
 
-def supply(address, compression_type, transfer_type, transfer_params):
-    local_path = download_file(address)
-    compressed_local_path = compress_file(local_path, compression_type)
-    transfer_file(compressed_local_path, transfer_type, transfer_params)
+class Supplier:
+    def __init__(self, address, compression_type, transfer_type, transfer_params):
+        self.address = address
+        self.compression_type = compression_type
+        self.transfer_type = transfer_type
+        self.transfer_params = transfer_params
 
+    def supply(self):
+        local_path = self.__download_file()
+        compressed_local_path = self.__compress_file(local_path)
+        self.__transfer_file(compressed_local_path)
 
-def download_file(address):
-    print(f"Downloading from {address}")
-    local_path = f"\\tmp\\{address.split('/')[-1]}"
-    return local_path
+    def __download_file(self):
+        print(f"Downloading from {self.address}")
+        local_path = f"\\tmp\\{self.address.split('/')[-1]}"
+        return local_path
 
+    def __compress_file(self, path):
+        if self.compression_type == CompressionType.ZIP:
+            return ZipCompressor(path).compress()
+        elif self.compression_type == CompressionType.GZIP:
+            return GzipCompressor(path).compress()
+        elif self.compression_type == CompressionType.RAR:
+            return RarCompressor(path).compress()
 
-def compress_file(path, type):
-    if type == CompressionType.ZIP:
-        return ZipCompressor(path).compress()
-    elif type == CompressionType.GZIP:
-        return GzipCompressor(path).compress()
-    elif type == CompressionType.RAR:
-        return RarCompressor(path).compress()
-
-
-def transfer_file(path, type, transfer_params):
-    if type == TransferType.FTP:
-        FTPAdapter(path, **transfer_params).transfer()
-    if type == TransferType.S3:
-        S3Adapter(path, **transfer_params).transfer()
+    def __transfer_file(self, path):
+        if self.transfer_type == TransferType.FTP:
+            FTPAdapter(path, **self.transfer_params).transfer()
+        if self.transfer_type == TransferType.S3:
+            S3Adapter(path, **self.transfer_params).transfer()
 
 
 if __name__ == '__main__':
-    supply(
-        "s3://something/file.csv",
-        CompressionType.ZIP,
-        TransferType.FTP,
-        dict(
+    supplier = Supplier(
+        address="s3://something/file.csv",
+        compression_type=CompressionType.ZIP,
+        transfer_type=TransferType.FTP,
+        transfer_params=dict(
             server="ftp://something",
             port=20
         )
     )
+
+    supplier.supply()
