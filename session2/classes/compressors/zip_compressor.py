@@ -4,9 +4,9 @@ from session2.classes.compressors.base import CompressorBase
 
 
 class ZipCompressor(CompressorBase):
-    def compress(self):
-        print(f"Compressing {self.path} to ZIP")
+    def __init__(self, output_path):
+        self.output_file = zipfile.ZipFile(output_path, mode='w')
 
-        output_file_path = self.path.replace(".csv", ".zip")
-        output_file = zipfile.ZipFile(output_file_path, mode='w')
-        output_file.write(self.path)
+    def compress(self, path):
+        print(f"Compressing {path} to ZIP")
+        self.output_file.write(path)

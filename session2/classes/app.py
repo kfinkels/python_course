@@ -18,7 +18,7 @@ class Supplier:
 
     def supply(self):
         local_files = self.__download_files()
-        compressed_local_path = self.__compress_file(local_files[0])
+        compressed_local_path = self.__compress_files(local_files)
         self.__transfer_file(compressed_local_path)
 
     def __download_files(self):
@@ -34,13 +34,17 @@ class Supplier:
 
         return local_files
 
-    def __compress_file(self, path):
+    def __compress_files(self, files_paths):
         if self.compression_type == CompressionType.ZIP:
-            return ZipCompressor(path).compress()
+            output_file_path = "tmp/output.zip"
+            compressor = ZipCompressor(output_file_path)
+            for file in files_paths:
+                compressor.compress(file)
+
         elif self.compression_type == CompressionType.GZIP:
-            return GzipCompressor(path).compress()
+            return GzipCompressor(files_paths).compress()
         elif self.compression_type == CompressionType.RAR:
-            return RarCompressor(path).compress()
+            return RarCompressor(files_paths).compress()
 
     def __transfer_file(self, path):
         if self.transfer_type == TransferType.FTP:
@@ -56,7 +60,8 @@ if __name__ == '__main__':
         pass
 
     supplier = Supplier(
-        addresses=["https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv"],
+        addresses=["https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv",
+                   "https://people.sc.fsu.edu/~jburkardt/data/csv/airtravel.csv"],
         compression_type=CompressionType.ZIP,
         transfer_type=TransferType.FTP,
         transfer_params=dict(
