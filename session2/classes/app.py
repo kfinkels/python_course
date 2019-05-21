@@ -40,7 +40,7 @@ class Supplier:
 
 if __name__ == '__main__':
     supplier = Supplier(
-        address="s3://something/file.csv",
+        address="https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv",
         compression_type=CompressionType.ZIP,
         transfer_type=TransferType.FTP,
         transfer_params=dict(
