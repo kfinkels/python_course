@@ -1,23 +1,19 @@
 from time import time
 
 
+def timer(func):
+    def f(x, y):
+        before = time()
+        value = func(x, y)
+        after = time()
+        print("elapsed", after - before)
+        return value
+    return f
+
+
 def add(x, y):
     return x + y
 
 
-before = time()
+add = timer(add)
 print(add(10, 20))
-after = time()
-print(after - before)
-
-
-before = time()
-print(add(100, 100))
-after = time()
-print(after - before)
-
-
-before = time()
-print(add(-5, 15))
-after = time()
-print(after - before)
