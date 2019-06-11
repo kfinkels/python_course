@@ -11,9 +11,10 @@ def timer(func):
     return f
 
 
+@timer
 def add(x, y):
     return x + y
 
 
-add = timer(add)
+# add = timer(add)
 print(add(10, 20))
