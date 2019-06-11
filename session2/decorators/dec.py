@@ -2,9 +2,9 @@ from time import time
 
 
 def timer(func):
-    def f(x, y):
+    def f(*args, **kwargs):
         before = time()
-        value = func(x, y)
+        value = func(*args, **kwargs)
         after = time()
         print("elapsed", after - before)
         return value
