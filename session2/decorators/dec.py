@@ -1,23 +1,29 @@
+from inspect import getsource
 from time import time
 
 
-def add(x, y):
-    return x + y
+def divide(x, y=1):
+    return x / y
 
 
-before = time()
-print(add(10, 20))
-after = time()
-print(after - before)
+# divide.__name__
+# divide.__module__
+# divide.__defaults__
+# divide.__code__.co_code
+# divide.__code__.co_varnames
+# getsource(divide())
+
+print(f"starting {divide.__name__} at {time()}")
+print(divide(10, 20))
+print(f"finished {divide.__name__} at {time()}")
 
 
-before = time()
-print(add(100, 100))
-after = time()
-print(after - before)
+print(f"starting {divide.__name__} at {time()}")
+print(divide(100, 100))
+print(f"finished {divide.__name__} at {time()}")
 
 
-before = time()
-print(add(-5, 15))
-after = time()
-print(after - before)
+print(f"starting {divide.__name__} at {time()}")
+print(divide(-5, 15))
+print(f"finished {divide.__name__} at {time()}")
+
