@@ -14,8 +14,18 @@ def logger(func):
     return wrapper
 
 
-divide = logger(divide)
+def saferun(func):
+    def wrapper(x, y=1):
+        try:
+            func(x, y)
+        except Exception as ex:
+            print(f"Exception: {ex}")
+    return wrapper
+
+
+divide = saferun(logger(divide))
 print(divide(10, 20))
 print(divide(100, 100))
 print(divide(-5, 15))
+print(divide(-5, 0))
 
