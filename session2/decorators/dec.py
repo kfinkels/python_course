@@ -1,19 +1,31 @@
 from time import time
 
 
-def timer(func):
-    def f(*args, **kwargs):
-        before = time()
-        value = func(*args, **kwargs)
-        after = time()
-        print("elapsed", after - before)
+def logger(func):
+    def wrapper(x, y=1):
+        print(f"starting {func.__name__} at {time()}")
+        value = func(x, y)
+        print(f"finished {func.__name__} at {time()}")
         return value
-    return f
+    return wrapper
 
 
-def add(x, y):
-    return x + y
+def saferun(func):
+    def wrapper(x, y=1):
+        try:
+            func(x, y)
+        except Exception as ex:
+            print(f"Exception: {ex}")
+    return wrapper
+
+@saferun
+@logger
+def divide(x, y=1):
+    return x / y
 
 
-add = timer(add)
-print(add(10, 20))
+print(divide(10, 20))
+print(divide(100, 100))
+print(divide(-5, 15))
+print(divide(-5, 0))
+
