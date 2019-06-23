@@ -3,7 +3,7 @@
 
 ### **Environment Setup**
 
-**Installing python \ pip:**
+**Installing python \ pip:**  
 `https://www.tutorialspoint.com/python/python_environment.htm`
 
 **Pycharm \ Jupiter:**  
