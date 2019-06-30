@@ -1,4 +1,4 @@
-# **Installing Jupiter**
+# **Installing Jupyter**
 
 
 `pip install jupyter`
