@@ -1,3 +1,11 @@
+# **Getting started**
+
+`virtualenv -p python3 env`
+
+`source env/bin/activate`
+
+`pip install -r requirements.txt`
+
 # **Flask**
 
 `curl -X GET --header 'Accept: application/json' 'http://localhost:8080/pets/1/dog'`
@@ -7,7 +15,7 @@
 `http://localhost:8080/swagger.yaml`
 `http://localhost:8080/ui/#!/default`
 
-# **exercises**
+# **Exercises**
 
 1. Implement add pet
 2. Implement get pet by ID
