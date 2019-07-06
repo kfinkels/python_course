@@ -1,0 +1,6 @@
+__pycache__/
+env/
+.idea/
+
+my_database.sqlite
+pet_store.sqlite
