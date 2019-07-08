@@ -37,13 +37,14 @@ class Supplier:
     def __compress_files(self, files_paths):
         if self.compression_type == CompressionType.ZIP:
             output_file_path = "tmp/output.zip"
-            # compressor = ZipCompressor(output_file_path)
-            # for file in files_paths:
-            #     compressor.compress(file)
 
-            with ZipCompressor(output_file_path) as compressor:
-                for file in files_paths:
-                    compressor.compress(file)
+            compressor = ZipCompressor(output_file_path)
+            for file in files_paths:
+                compressor.compress(file)
+
+            # with ZipCompressor(output_file_path) as compressor:
+            #     for file in files_paths:
+            #         compressor.compress(file)
 
         elif self.compression_type == CompressionType.GZIP:
             return GzipCompressor(files_paths).compress()
