@@ -46,6 +46,12 @@ class Supplier:
             #     for file in files_paths:
             #         compressor.compress(file)
 
+            # try:
+            #     something:
+            # finally:
+            #     close
+
+
         elif self.compression_type == CompressionType.GZIP:
             return GzipCompressor(files_paths).compress()
         elif self.compression_type == CompressionType.RAR:
