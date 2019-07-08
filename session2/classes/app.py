@@ -5,6 +5,7 @@ from session2.classes.compressors.gzip_compressor import GzipCompressor
 from session2.classes.compressors.rar_compressor import RarCompressor
 from session2.classes.compressors.zip_compressor import ZipCompressor
 from session2.classes.enums import CompressionType, TransferType
+from session2.classes.instance_creator import create_instance
 from session2.classes.transfer_adapters.ftp_adapter import FTPAdapter
 from session2.classes.transfer_adapters.s3_adapter import S3Adapter
 
@@ -35,20 +36,12 @@ class Supplier:
         return local_files
 
     def __compress_files(self, files_paths):
-        if self.compression_type == CompressionType.ZIP:
-            output_file_path = "tmp/output.zip"
-            # compressor = ZipCompressor(output_file_path)
-            # for file in files_paths:
-            #     compressor.compress(file)
+        output_file_path = "tmp/output.zip"
+        compressor = create_instance(self.compression_type.value, output_file_path)
 
-            with ZipCompressor(output_file_path) as compressor:
-                for file in files_paths:
-                    compressor.compress(file)
-
-        elif self.compression_type == CompressionType.GZIP:
-            return GzipCompressor(files_paths).compress()
-        elif self.compression_type == CompressionType.RAR:
-            return RarCompressor(files_paths).compress()
+        with compressor:
+            for file in files_paths:
+                compressor.compress(file)
 
     def __transfer_file(self, path):
         if self.transfer_type == TransferType.FTP:
