@@ -2,18 +2,19 @@
 import connexion
 import logging
 
-from db import PetStoreDB
-
+from swagger.pets_database import init_db, db_session
 
 logging.basicConfig(level=logging.INFO)
 app = connexion.App(__name__)
 app.add_api('swagger.yaml')
-# set the WSGI application callable to allow using uWSGI:
-# uwsgi --http :8080 -w app
 application = app.app
 
 
 if __name__ == '__main__':
-    PetStoreDB.init_db()
-    # run our standalone gevent server
+    init_db()
     app.run(port=8080)
+
+
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    db_session.remove()

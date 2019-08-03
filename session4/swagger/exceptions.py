@@ -1,0 +1,2 @@
+class DuplicatePetError(Exception):
+    pass
