@@ -11,7 +11,7 @@ produces:
 paths:
   /pets:
     get:
-      operationId: app_swagger.get_pets
+      operationId: swagger.pet_store.get_pets
       summary: Get all pets
       parameters:
         - name: animal_type

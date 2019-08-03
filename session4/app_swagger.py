@@ -13,11 +13,7 @@ app.add_api('swagger.yaml')
 application = app.app
 
 
-def get_pets(limit, animal_type=None):
-    return PetStoreDB.get_pets(limit, animal_type)
-
-
 if __name__ == '__main__':
     PetStoreDB.init_db()
     # run our standalone gevent server
-    app.run(port=8080, server='gevent')
+    app.run(port=8080)

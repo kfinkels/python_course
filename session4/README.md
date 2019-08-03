@@ -13,7 +13,13 @@
 # **Connexion with Swagger**
 
 `http://localhost:8080/swagger.yaml`
+
 `http://localhost:8080/ui/#!/default`
+
+
+# **Gunicorn**
+
+`https://gunicorn.org/`
 
 # **Exercises**
 
