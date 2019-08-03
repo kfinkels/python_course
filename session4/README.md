@@ -21,6 +21,8 @@
 
 `https://gunicorn.org/`
 
+`http://docs.gunicorn.org/en/latest/design.html`
+
 # **Exercises**
 
 1. Implement add pet
