@@ -36,7 +36,7 @@ paths:
                   $ref: '#/definitions/Pet'
 #  /pets/{pet_id}:
 #    get:
-#      operationId: app_swagger.get_pet
+#      operationId: swagger.pet_store.get_pet_by_id
 #      summary: Get a single pet
 #      parameters:
 #        - $ref: '#/parameters/pet_id'
@@ -63,7 +63,7 @@ paths:
         400:
           description: Missing parameter
 #    delete:
-#      operationId: app_swagger.delete_pet
+#      operationId: swagger.pet_store.delete_pet
 #      summary: Remove a pet
 #      parameters:
 #        - $ref: '#/parameters/pet_id'
