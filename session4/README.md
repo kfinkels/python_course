@@ -42,11 +42,11 @@
 
 # **PyCharm configuration**
 
-![Flask Example]
-(https://github.com/kfinkels/python_course/tree/master/session4/images/flask.png)
+Flask Example:
+https://github.com/kfinkels/python_course/tree/master/session4/images/flask.png
 
-![Gunicorn Example] 
-(https://github.com/kfinkels/python_course/tree/master/session4/images/flask.png)
+Gunicorn Example: 
+https://github.com/kfinkels/python_course/tree/master/session4/images/flask.png
 
-![Swagger Example]
-(https://github.com/kfinkels/python_course/tree/master/session4/images/flask.png)
+Swagger Example:
+https://github.com/kfinkels/python_course/tree/master/session4/images/flask.png
