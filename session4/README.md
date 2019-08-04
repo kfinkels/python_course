@@ -16,6 +16,12 @@
 
 `http://localhost:8080/ui/#!/default`
 
+# **SQLAlchemy**
+
+`https://www.sqlalchemy.org/`
+
+`https://flask.palletsprojects.com/en/1.1.x/patterns/sqlalchemy/`
+
 
 # **Gunicorn**
 
