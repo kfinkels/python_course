@@ -6,9 +6,12 @@
 
 `pip install -r requirements.txt`
 
+`curl -X GET --header 'Accept: application/json' 'http://localhost:8080/pets/1/dog'`
+
+
 # **Flask**
 
-`curl -X GET --header 'Accept: application/json' 'http://localhost:8080/pets/1/dog'`
+`https://palletsprojects.com/p/flask/`
 
 # **Connexion with Swagger**
 
@@ -36,3 +39,14 @@
 3. Implement delete pet by ID
 4. Implement get all pets created after DATE
 5. Change animal_type to one of (enum)
+
+# **PyCharm configuration**
+
+Flask Example: 
+(https://github.com/kfinkels/python_course/tree/master/session4/images/flask.png)
+
+Gunicorn Example: 
+(https://github.com/kfinkels/python_course/tree/master/session4/images/flask.png)
+
+Swagger Example: 
+(https://github.com/kfinkels/python_course/tree/master/session4/images/flask.png)
