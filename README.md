@@ -6,7 +6,7 @@
 **Installing python \ pip:**  
 `https://www.tutorialspoint.com/python/python_environment.htm`
 
-**Pycharm \ Jupiter:**  
+**Pycharm \ Jupyter:**  
 `https://jupyter.org/`
 `https://www.jetbrains.com/pycharm/download`
 
@@ -21,17 +21,18 @@ Containers (list, tuple, set, dict)
 
 ### **Lesson 2:**
 
-Modules and packages  
-Classes and Objects  
-Decoration  
-Generators  
+Modules and packages
+Classes and Objects
+Context manager 
+Generators
 
 ### **Lesson 3:**
 
-Functional programming  
-Playing with containers  
-Context manager  
+List\Dict comprehension
+Functional programming 
+Decoration
 Debug
+Exception
 
 ### **Lesson 4:**
 
