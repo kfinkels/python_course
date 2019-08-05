@@ -21,18 +21,18 @@ Containers (list, tuple, set, dict)
 
 ### **Lesson 2:**
 
-Modules and packages
-Classes and Objects
-Context manager 
-Generators
+Modules and packages  
+Classes and Objects  
+Context manager  
+Generators  
 
 ### **Lesson 3:**
 
-List\Dict comprehension
-Functional programming 
-Decoration
-Debug
-Exception
+List\Dict comprehension  
+Functional programming   
+Decoration  
+Debug  
+Exception  
 
 ### **Lesson 4:**
 
