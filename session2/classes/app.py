@@ -4,10 +4,15 @@ from urllib import request
 from session2.classes.compressors.gzip_compressor import GzipCompressor
 from session2.classes.compressors.rar_compressor import RarCompressor
 from session2.classes.compressors.zip_compressor import ZipCompressor
+from session2.classes.compressors.base import CompressorBase
 from session2.classes.enums import CompressionType, TransferType
 from session2.classes.instance_creator import create_instance
 from session2.classes.transfer_adapters.ftp_adapter import FTPAdapter
 from session2.classes.transfer_adapters.s3_adapter import S3Adapter
+
+# x = ZipCompressor()
+
+assert hasattr(CompressorBase, 'compress')
 
 
 class Supplier:
@@ -32,6 +37,8 @@ class Supplier:
             with request.urlopen(address) as response, open(local_path, 'wb') as out_file:
                 shutil.copyfileobj(response, out_file)
                 local_files.append(local_path)
+
+
 
         return local_files
 
@@ -68,3 +75,5 @@ if __name__ == '__main__':
     )
 
     supplier.supply()
+
+import compressors.zip
