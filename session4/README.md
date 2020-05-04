@@ -46,7 +46,7 @@ Flask Example:
 https://github.com/kfinkels/python_course/tree/master/session4/images/flask.png
 
 Gunicorn Example: 
-https://github.com/kfinkels/python_course/tree/master/session4/images/flask.png
+https://github.com/kfinkels/python_course/tree/master/session4/images/gunicorn.png
 
 Swagger Example:
-https://github.com/kfinkels/python_course/tree/master/session4/images/flask.png
+https://github.com/kfinkels/python_course/tree/master/session4/images/swagger.png
