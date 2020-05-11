@@ -34,19 +34,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/definitions/Pet'
-#  /pets/{pet_id}:
-#    get:
-#      operationId: swagger.pet_store.get_pet_by_id
-#      summary: Get a single pet
-#      parameters:
-#        - $ref: '#/parameters/pet_id'
-#      responses:
-#        200:
-#          description: Return pet
-#          schema:
-#            $ref: '#/definitions/Pet'
-#        404:
-#          description: Pet does not exist
     put:
       operationId: swagger.pet_store.add_pet
       summary: Create a pet
@@ -54,7 +41,7 @@ paths:
         - name: pet
           in: body
           schema:
-            $ref: '#/definitions/Pet'
+            $ref: '#/definitions/NewPet'
       responses:
         201:
           description: New pet created
@@ -62,17 +49,41 @@ paths:
           description: Pet already exists
         400:
           description: Missing parameter
-#    delete:
-#      operationId: swagger.pet_store.delete_pet
-#      summary: Remove a pet
-#      parameters:
-#        - $ref: '#/parameters/pet_id'
-#      responses:
-#        204:
-#          description: Pet was deleted
-#        404:
-#          description: Pet does not exist
 
+  /pets/{pet_id}:
+    get:
+      operationId: swagger.pet_store.get_pet
+      summary: Get a single pet
+      parameters:
+        - $ref: '#/parameters/pet_id'
+      responses:
+        200:
+          description: Return a pet details
+          schema:
+            $ref: '#/definitions/Pet'
+        404:
+          description: Return details of a pet
+    delete:
+      operationId: swagger.pet_store.delete_pet
+      summary: Delete a pet
+      parameters:
+        - $ref: '#/parameters/pet_id'
+      responses:
+        204:
+          description: Pet was deleted
+        404:
+          description: Pet does not exist
+  /pets/by_date/{creation_date}:
+    get:
+      operationId: swagger.pet_store.get_pet_after_creation_date
+      summary: Get a list of pet
+      parameters:
+        - $ref: '#/parameters/creation_date'
+      responses:
+        200:
+          description: Return details of pets
+          schema:
+            $ref: '#/definitions/Pet'
 
 parameters:
   pet_id:
@@ -82,8 +93,34 @@ parameters:
     type: string
     required: true
     pattern: "^[a-zA-Z0-9-]+$"
+  creation_date:
+    name: creation_date
+    description: Pet's creation date
+    in: path
+    type: string
+    required: true
+    format: date-time
 
 definitions:
+  NewPet:
+    type: object
+    required:
+      - name
+      - animal_type
+    properties:
+      name:
+        type: string
+        description: Pet's name
+        example: "Susie"
+        minLength: 1
+        maxLength: 100
+      animal_type:
+        type: string
+        enum: [Dog, Cat, Hourse]
+        description: Kind of animal
+        example: "cat"
+        minLength: 1
+
   Pet:
     type: object
     required:
