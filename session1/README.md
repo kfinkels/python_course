@@ -1,7 +1,7 @@
 # **Installing Jupyter**
 
 
-`pip install jupyter`
+`pip install jupyterlab`
 
 # **Running Notebook**
 
