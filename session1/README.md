@@ -11,7 +11,7 @@
 
 # **Reference**
 
-`https://jupyter.org/documentation`
+`https://jupyterlab.readthedocs.io/en/stable/index.html`
 
 # **Exercises**
 
