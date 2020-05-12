@@ -7,11 +7,11 @@
 
 `cd session1`
 
-`jupyter notebook`
+`jupyter-lab`
 
 # **Reference**
 
-`https://jupyter.org/`
+`https://jupyter.org/documentation`
 
 # **Exercises**
 
