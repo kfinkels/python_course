@@ -35,10 +35,12 @@ The requirments are:
           print(char)
   ```
   > * Output:
+  ```
       m
       a
       p
       s
+  ```
 * Implement a Timer context manager class that will print the time it takes to do an action. 
   > * Execution:
   ```
