@@ -10,8 +10,8 @@
 
 # **Exercises**
 
-* Create a deck of cards class. 
-Internally, the deck of cards should use another class, a card class. 
+* Create a deck of cards class.\n 
+Internally, the deck of cards should use another class, a card class.\n 
 Your requirements are:
 
     The Deck class should have a deal method to deal a single card from the deck
