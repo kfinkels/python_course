@@ -26,21 +26,21 @@ The requirments are:
     > * Output: 
         52
 * Implement an iterator for looping over a sequence (string\list) backwards. 
-  ** Execution:
+  > * Execution:
       rev = Reverse('spam')
       for char in rev:
           print(char)
-  ** Output:
+  > * Output:
       m
       a
       p
       s
 * Implement a Timer context manager class that will print the time it takes to do an action. 
-  ** Execution:
+  > * Execution:
       with(Timer()):
           for i in range(1000):
               pass
-  ** Output:
+  > * Output:
       0.000000052
  
 
