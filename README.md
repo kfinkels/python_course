@@ -3,11 +3,11 @@
 
 ### **Environment Setup**
 
-**Installing python \ pip:**  
-`https://www.tutorialspoint.com/python/python_environment.htm`
+**Installing python (3.7 or higher) \ pip:**  
+`https://realpython.com/installing-python`
 
 **Pycharm \ Jupyter:**  
-`https://jupyter.org/`
+`https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html`
 `https://www.jetbrains.com/pycharm/download`
 
 ### **Lesson 1:**

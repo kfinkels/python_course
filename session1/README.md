@@ -1,17 +1,17 @@
 # **Installing Jupyter**
 
 
-`pip install jupyter`
+`pip install jupyterlab`
 
 # **Running Notebook**
 
 `cd session1`
 
-`jupyter notebook`
+`jupyter-lab`
 
 # **Reference**
 
-`https://jupyter.org/`
+`https://jupyterlab.readthedocs.io/en/stable/index.html`
 
 # **Exercises**
 
