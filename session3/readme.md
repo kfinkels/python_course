@@ -1,14 +1,12 @@
-# **Requirements\setup.py**
+# **Running Notebook**
 
-  ```
-     package-one==1.9.4
-     git+git://github.com/path/to/package-two@41b95ec#egg=package-two
-     package-three==1.0.1
-  ```
+`cd session3`
 
-# **Debug**
+`jupyter-lab`
 
-`dir, pdb, ipdb`
+# **Reference**
+
+`https://jupyterlab.readthedocs.io/en/stable/index.html`
 
 # **List\Dictionary comprehension**
 
@@ -53,4 +51,24 @@
     [1, 2, 3, 4] --> 10
     ['k', 'e', 'r', 'e', 'n'] --> 'keren'
     ['k', 3, 'r'] --> 'k3r' (mixed become a string)
+  ```
+  
+# **Generator**
+
+* Define generator function get_lengths that returns the length of each one of the items in the list
+  ```
+    lannister = ['cersei', 'jaime', 'tywin', 'tyrion', 'joffrey']
+    for value in get_lengths(lannister):
+        print(value)
+  ```
+* Create the same with generator expression
+  ```
+    lannister = ['cersei', 'jaime', 'tywin', 'tyrion', 'joffrey']
+
+    # Create a generator object: lengths
+    lengths = << your code goes here >>
+
+    # Iterate over and print the values in lengths
+    for value in lengths:
+        print(value)
   ```
