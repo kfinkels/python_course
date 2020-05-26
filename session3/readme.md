@@ -10,12 +10,6 @@
 
 # **List\Dictionary comprehension**
 
-* Build the following matrix using list comprehension: 
-  ```
-    [[ 1, 0, 0 ],
-    [ 0, 1, 0 ],
-    [ 0, 0, 1 ]]
-  ```
 * Given the list: 
 
   ```names = [ 'Bob', 'JOHN', 'alice', 'bob', 'ALICE', 'J', 'Bob' ]``` 
@@ -38,6 +32,18 @@
    construct the dictionary: 
  
    ```{'even': ['b', 'd', 'f'], 'odd': ['a', 'c', 'e']}```
+   
+   note: the way to do that is: 
+   
+   ```{'even': <list comprehension 1>, 'odd': <list comprehension 2>}```
+   
+
+* Build the following matrix using list comprehension: 
+  ```
+    [[ 1, 0, 0 ],
+    [ 0, 1, 0 ],
+    [ 0, 0, 1 ]]
+  ```
 
 # **Functional programming**
 
