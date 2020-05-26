@@ -1,5 +1,5 @@
 def build_matrix():
-    return [ [ 1 if item_idx == row_idx else 0 for item_idx in range(0, 3) ] for row_idx in range(0, 3) ]
+    return [[int(x==y) for x in range(3)] for y in range(3)]
 
 
 def construct_new_list(names):
