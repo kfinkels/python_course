@@ -26,14 +26,11 @@ def printer(msg):
 def factory(args):
          def int_sum():
             return sum(args)
-         def str_sum():
-            return ''.join(args)
-         def mix_sum():
+         def default():
             return ''.join([str(a) for a in args])
-         types = {type(a) for a in args}
-         if len(types) == 1:
-            return int_sum if types == {int} else str_sum
-         return mix_sum
+         if all(type(x) == int for x in args):
+             return int_sum
+         return default
 
 
 def get_lengths(input_list):
