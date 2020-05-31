@@ -118,7 +118,7 @@ definitions:
         type: string
         enum: [Dog, Cat, Hourse]
         description: Kind of animal
-        example: "cat"
+        example: "Cat"
         minLength: 1
 
   Pet:
@@ -141,7 +141,7 @@ definitions:
       animal_type:
         type: string
         description: Kind of animal
-        example: "cat"
+        example: "Cat"
         minLength: 1
       created:
         type: string
