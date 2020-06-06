@@ -1,0 +1,6 @@
+pytest
+mock
+pytest-html
+pytest-cov
+pytest-pep8
+

@@ -34,7 +34,22 @@ paths:
                 type: array
                 items:
                   $ref: '#/definitions/Pet'
-    # put goes here
+    post:
+      operationId: swagger.pet_store.add_pet
+      summary: Create a pet
+      parameters:
+        - name: pet
+          in: body
+          schema:
+            $ref: '#/definitions/NewPet'
+      responses:
+        201:
+          description: New pet created
+        404:
+          description: Pet already exists
+        400:
+          description: Missing parameter
+
   /pets/{pet_id}:
     get:
       operationId: swagger.pet_store.get_pet
@@ -48,7 +63,16 @@ paths:
             $ref: '#/definitions/Pet'
         404:
           description: Return details of a pet
-    # delete goes here
+    delete:
+      operationId: swagger.pet_store.delete_pet
+      summary: Delete a pet
+      parameters:
+        - $ref: '#/parameters/pet_id'
+      responses:
+        204:
+          description: Pet was deleted
+        404:
+          description: Pet does not exist
   /pets/by_date/{creation_date}:
     get:
       operationId: swagger.pet_store.get_pet_after_creation_date

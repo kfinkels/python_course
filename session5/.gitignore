@@ -1,6 +1,10 @@
 __pycache__/
 env/
 .idea/
+.coverage/
+some_dir/
+assets/
 
 my_database.sqlite
 pet_store.sqlite
+report.html
