@@ -26,3 +26,13 @@ def test_create_dir_success(isdir_mock, mkdir_mock):
 def test_create_dir_raise_error(isdir_mock, mkdir_mock):
     isdir_mock.return_value = False
     assert create_dir('some dir') == 'failed'
+
+
+@patch('file_explorer.os.path.isdir')
+def test_create_dir_failed_extra_asserts(isdir_mock):
+    isdir_mock.return_value = True
+    assert create_dir('some dir') == 'exists'
+    isdir_mock.assert_called()
+    isdir_mock.assert_called_once()
+    isdir_mock.assert_called_with('some dir')
+    isdir_mock.assert_called_once_with('some dir')

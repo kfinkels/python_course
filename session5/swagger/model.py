@@ -17,8 +17,7 @@ class Pet(Base):
     def __init__(self, name, animal_type, created=None):
         self.name = name
         self.animal_type = animal_type
-        if not created:
-            self.created = datetime.now()
+        self.created = created if created else datetime.now()
 
     def __repr__(self):
         return f'<Pets {self.name}>'

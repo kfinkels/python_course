@@ -1,52 +1,31 @@
 # **Getting started**
 
-`virtualenv -p python3 env`
+create virtualenv: `virtualenv -p python3 session5`
 
-`source env/bin/activate`
+activate the virtualenv: `source session5/bin/activate`
 
+install requirements: <br>
 `pip install -r requirements.txt`
+`pip install -r dev.txt`
 
-`curl -X GET --header 'Accept: application/json' 'http://localhost:8080/pets/1/dog'`
+run application: `python app-swagger.py`
 
-
-# **Flask**
-
-`https://palletsprojects.com/p/flask/`
-
-# **Connexion with Swagger**
-
-`http://localhost:8080/swagger.yaml`
-
-`http://localhost:8080/ui/#!/default`
-
-# **SQLAlchemy**
-
-`https://www.sqlalchemy.org/`
-
-`https://flask.palletsprojects.com/en/1.1.x/patterns/sqlalchemy/`
-
-
-# **Gunicorn**
-
-`https://gunicorn.org/`
-
-`http://docs.gunicorn.org/en/latest/design.html`
+run tests: `pytest`
 
 # **Exercises**
 
-1. Implement add pet
-2. Implement get pet by ID
-3. Implement delete pet by ID
-4. Implement get all pets created after DATE
-5. Change animal_type to one of (enum)
+* API test - add failed test to post pet
+* Parameterize: 
+> * Write a method that compare 2 dictionaries and return a dictionary with all the matching items (key and value) 
+> * Add the the following tests:
+>> * There are no matched items
+>> * All items match
+>> * One item match
+>> * dict1\dict2 is None
+>> * dict1\dict2 is not a dict
+* Mock: 
+> * Write a unittest for swagger/pet_store.py::get_pet(pet_id)
+> * Validate that the function returns a tuple `(<pet_dict>, 200)`
+> * Validate that the result pet dict values are as expected
+> * HINT: You should patch get_pet_by_id
 
-# **PyCharm configuration**
-
-Flask Example:
-https://github.com/kfinkels/python_course/tree/master/session4/images/flask.png
-
-Gunicorn Example: 
-https://github.com/kfinkels/python_course/tree/master/session4/images/gunicorn.png
-
-Swagger Example:
-https://github.com/kfinkels/python_course/tree/master/session4/images/swagger.png
