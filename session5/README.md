@@ -8,7 +8,7 @@ install requirements: <br>
 `pip3 install -r requirements.txt` <br>
 `pip3 install -r dev.txt`
 
-run application: `python app_swagger.py`
+run application: `python3 app_swagger.py`
 
 run tests: `pytest`
 
