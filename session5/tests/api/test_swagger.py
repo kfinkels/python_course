@@ -20,7 +20,7 @@ def test_add_pet():
     # convert dict to json by json.dumps() for body data.
     resp = requests.post(url, headers=headers, data=json.dumps(payload))
 
-    # Validate response headers and body contents, e.g. status code.
+    # Validate status code and body contents.
     assert resp.status_code == 201
     resp_body = resp.json()
     assert resp_body['id'] > 1
