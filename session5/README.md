@@ -5,10 +5,10 @@ create virtualenv: `virtualenv -p python3 session5`
 activate the virtualenv: `source session5/bin/activate`
 
 install requirements: <br>
-`pip install -r requirements.txt`
-`pip install -r dev.txt`
+`pip3 install -r requirements.txt` <br>
+`pip3 install -r dev.txt`
 
-run application: `python app-swagger.py`
+run application: `python app_swagger.py`
 
 run tests: `pytest`
 
