@@ -6,7 +6,9 @@
 
 `pip install -r requirements.txt`
 
-`curl -X GET --header 'Accept: application/json' 'http://localhost:8080/pets/1/dog'`
+`run the server`
+
+`curl -X GET --header 'Accept: application/json' 'http://localhost:8080/pets'`
 
 
 # **Flask**
